@@ -13,11 +13,9 @@ function getWeather() {
 
     fetch(currentWeatherUrl)
         .then(response => {
-            // Debugging: Periksa status respons dari API
             console.log("Response status for current weather:", response.status);
 
             if (!response.ok) {
-                // Jika respons gagal, tampilkan error message sesuai status code
                 throw new Error('Error fetching current weather data: ' + response.statusText);
             }
             return response.json();
@@ -32,11 +30,9 @@ function getWeather() {
 
         fetch(forecastUrl)
         .then(response => {
-            // Debugging: Periksa status respons dari API
             console.log("Response status for forecast:", response.status);
 
             if (!response.ok) {
-                // Jika respons gagal, tampilkan error message sesuai status code
                 throw new Error('Error fetching hourly forecast data: ' + response.statusText);
             }
             return response.json();
